@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-raleway),
+    sans-serif;
+  font-style: normal;
+  user-select: none;
+  color: var(--font-color-primary);
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12rem 6rem 1rem 6rem;
+}
+
+@media (max-width:982px) {
+  main {
+    padding: 12rem 4rem 1rem 4rem;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width:768px) {
+  main {
+    padding: 12rem 1.9rem 1rem 1.9rem;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width:576px) {
+  main {
+    padding: 12rem 1rem 1rem 1rem;
+    transition: all 0.5s ease;
+  }
+}
+
+:root {
+  //font colors
+  --font-color-primary: rgba(29, 31, 34, 1);
+  --font-color-white: rgba(255, 255, 255, 1);
+
+  //fonts
+  --font-raleway: "Raleway";
+
+  //background 
+  --background-black: rgb(29, 31, 34, 1);
+  --background-white: rgba(255, 255, 255, 1);
+
+  //border
+  --border-light-gray: rgb(229, 229, 229);
+
+  //shadow
+  --shadow-drop: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+  --shadow-button: drop-shadow(0px 4px 15px rgba(29, 31, 34, 0.1));
+}
