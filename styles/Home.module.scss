@@ -1,0 +1,21 @@
+/*Logo styles*/
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.logo-title {
+  display: flex;
+  width: auto;
+  height: 1rem;
+}
