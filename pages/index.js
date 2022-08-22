@@ -1,9 +1,19 @@
 import Head from 'next/head';
 
+import { gql, useQuery, useMutation } from '@apollo/client';
+import { GET_ALL_LINKS } from '../graphql/Queries';
+
 import Header from '../components/Header';
+import PostsList from '../components/PostsList';
+
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+    const { data, loading, error } = useQuery(GET_ALL_LINKS);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Oh no... {error.message}</p>;
+    const links = data.feed.links;
     return (
         <>
             <Head>
@@ -12,7 +22,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <main></main>
+            <main>
+                <PostsList links={links} />
+            </main>
         </>
     );
 }
