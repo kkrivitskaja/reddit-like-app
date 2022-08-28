@@ -11,7 +11,6 @@ const Votes = ({ linkId }) => {
             <button
                 onClick={() => {
                     upvotePost(linkId);
-                    console.log('linkId', linkId);
                 }}
             >
                 <UpvoteIcon />

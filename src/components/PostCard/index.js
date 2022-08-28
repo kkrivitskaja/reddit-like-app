@@ -1,7 +1,4 @@
-import { useMutation } from '@apollo/client';
 import Link from 'next/link';
-
-import { VOTE_FOR_LINK } from '../../graphql/Queries';
 
 import VotesInfo from './VotesInfo';
 import Vote from './Vote';
@@ -9,14 +6,6 @@ import Vote from './Vote';
 import style from '../../../styles/Home.module.scss';
 
 const PostCard = ({ post }) => {
-    // const upvoteHandler = () => {
-    //     useMutation(VOTE_FOR_LINK, {
-    //         variables: { linkId: post.id },
-    //     })
-    //         .then(() => alert('Upvoted!'))
-    //         .catch(() => alert('You already voted!'));
-    // };
-
     return (
         <div className={style['card']}>
             <div className={style['card-vote']}>

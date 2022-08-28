@@ -1,7 +1,6 @@
 import SearchIcon from '../../assets/SearchIcon';
 import style from './SearchBar.module.scss';
 
-
 const SearchBar = () => {
     return (
         <form className={style['search']}>
@@ -10,5 +9,5 @@ const SearchBar = () => {
             <button type="submit" hidden />
         </form>
     );
-}
+};
 export default SearchBar;

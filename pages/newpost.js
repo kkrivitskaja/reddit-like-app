@@ -16,11 +16,7 @@ function NewPost() {
 
     function onSubmit(e) {
         e.preventDefault();
-
         createPost({ url, description });
-        {
-            console.log(url, description);
-        }
         router.push('/');
     }
     return (
@@ -52,17 +48,8 @@ function NewPost() {
                         Cancel
                     </BaseButton>
                     <BaseButton type="submit" primary onSubmit={onSubmit}>
-                       Create post
+                        Create post
                     </BaseButton>
-                    {/* <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            router.push('/');
-                        }}
-                    >
-                        Cancel
-                    </button>
-                    <button type="submit">Create post</button> */}
                 </form>
             </div>
         </main>

@@ -17,9 +17,6 @@ const SignupForm = () => {
     function onSubmit(e) {
         e.preventDefault();
         signUp({ email, password, name });
-        {
-            console.log('name, email, password', name, email, password);
-        }
         router.push('/');
     }
 

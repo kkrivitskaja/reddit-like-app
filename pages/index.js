@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { useQuery} from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_ALL_LINKS } from '../src/graphql/Queries';
 
 import PostCard from '../src/components/PostCard/index';
@@ -25,8 +25,6 @@ export default function Home() {
             </Head>
 
             <main>
-            
-                {console.log(data, links)}
                 <div className={style['posts-list']}>
                     {links.map((link) => (
                         <PostCard post={link} key={link.id} />

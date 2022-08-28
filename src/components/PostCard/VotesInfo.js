@@ -19,8 +19,8 @@ const VotesInfo = ({ votes, title }) => {
                     <div className={style['votes-user']} key={vote.user.id}>
                         {vote.user?.name !== '' && /^[a-zA-Z]+$/.test(vote.user?.name.substr(0, 1))
                             ? vote.user.name.substr(0, 1).toLocaleUpperCase()
-                            //if first symbol in nickname is not a letter
-                            : unknown}
+                            : //if first symbol in nickname is not a letter
+                              unknown}
                     </div>
                 ))}
                 <button className={style['votes-btn']} onClick={() => setShowUpvote(!isShowUpvote)}>

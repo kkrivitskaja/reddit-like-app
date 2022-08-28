@@ -30,17 +30,13 @@ function useProvideAuth() {
     const router = useRouter();
     const isSignedIn = () => {
         if (authToken) {
-            console.log('LOGIN');
-
             return true;
         } else {
-            console.log('LOG OUT');
             return false;
         }
     };
     const isUserInfo = () => {
         if (authToken) {
-            console.log('LOGIN USER INFO');
             return <div>{userInfo.name}</div>;
         }
     };
@@ -73,8 +69,6 @@ function useProvideAuth() {
                 mutation: CREATE_NEW_POST,
                 variables: { url, description },
             });
-
-            console.log('SUCCESS!!!!', result);
         } catch (e) {
             console.log(e.message);
         }
@@ -88,14 +82,10 @@ function useProvideAuth() {
             }
             const client = createApolloClient();
 
-            console.log('value on handler', linkId);
-
-            const result = await client.mutate({
+                        const result = await client.mutate({
                 mutation: VOTE_FOR_POST,
                 variables: { linkId },
             });
-
-            console.log('UPVOTED!!!!!!!', result);
         } catch (e) {
             console.log(e.message);
         }
@@ -110,8 +100,6 @@ function useProvideAuth() {
                 variables: { email, password },
             });
 
-            console.log(result);
-
             if (result?.data?.login?.token) {
                 setAuthToken(result?.data?.login?.token);
                 setUserInfo({
@@ -120,17 +108,12 @@ function useProvideAuth() {
                     id: result?.data?.login?.user.id,
                 });
             }
-            localStorage.setItem('token', result?.data?.login?.token);
-            console.log(result?.data?.login);
-            console.log('user info', userInfo);
+
             router.push('/');
         } catch (error) {
             console.log(error.message);
-           
-            return alert('FAIL!!!!!!!!!!!!!!!!!!!!!!!!!');
         }
     };
-
 
     const signUp = async ({ email, password, name }) => {
         try {
@@ -141,8 +124,6 @@ function useProvideAuth() {
                 variables: { email, password, name },
             });
 
-            console.log("SIGNUP", result);
-
             if (result?.data?.signup?.token) {
                 setAuthToken(result?.data?.signup?.token);
                 setUserInfo({
@@ -151,9 +132,8 @@ function useProvideAuth() {
                     id: result?.data?.login?.user.id,
                 });
             }
-            localStorage.setItem('token1', result?.data?.signup?.token);
-            console.log('user info', userInfo);
-            router.push('/')
+
+            router.push('/');
         } catch (error) {
             console.log(error.message);
         }
@@ -166,10 +146,8 @@ function useProvideAuth() {
             email: '',
             id: '',
         });
-        console.log('Logget out');
-        console.log('user info', userInfo);
-        localStorage.removeItem('token');
-        //  router.push('/')
+
+        router.push('/');
     };
 
     return {

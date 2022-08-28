@@ -19,18 +19,15 @@ const SinglePost = () => {
     const post = data.links;
     const { comments } = post;
 
-
     return (
         <main>
             <PostCard post={post} key={post.id} />
-            {comments.map(
-                ((comment) => (
-                    <div key={comment.id}>
-                        <p>{comment.text}</p>
-                        <span>{comment.user.name}</span>
-                    </div>
-                ))
-            )}
+            {comments.map((comment) => (
+                <div key={comment.id}>
+                    <p>{comment.text}</p>
+                    <span>{comment.user.name}</span>
+                </div>
+            ))}
         </main>
     );
 };

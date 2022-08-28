@@ -16,10 +16,7 @@ const LoginForm = () => {
     function onSubmit(e) {
         e.preventDefault();
         signIn({ email, password });
-        {
-            console.log('email, password');
-        }
-        // router.push('/')
+        router.push('/');
     }
     return (
         <div className={styles['login']}>
