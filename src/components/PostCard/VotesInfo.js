@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import VotesList from './VotesList';
 
-import style from '../../styles/Home.module.scss';
+import style from '../../../styles/Home.module.scss';
 
 const VotesInfo = ({ votes, title }) => {
     const [isShowUpvote, setShowUpvote] = useState(false);
+    const unknown = 'John Doe'.substr(0, 1).toLocaleUpperCase();
     if (votes.length === 0)
         return (
             <div className={style['votes']}>
@@ -18,7 +19,8 @@ const VotesInfo = ({ votes, title }) => {
                     <div className={style['votes-user']} key={vote.user.id}>
                         {vote.user?.name !== '' && /^[a-zA-Z]+$/.test(vote.user?.name.substr(0, 1))
                             ? vote.user.name.substr(0, 1).toLocaleUpperCase()
-                            : 'John Doe'.substr(0, 1).toLocaleUpperCase()}
+                            : //if first symbol in nickname is not a letter
+                              unknown}
                     </div>
                 ))}
                 <button className={style['votes-btn']} onClick={() => setShowUpvote(!isShowUpvote)}>

@@ -1,4 +1,4 @@
-import style from '../../styles/Home.module.scss';
+import style from '../../../styles/Home.module.scss';
 
 const VotesList = ({ users, title }) => {
     const usersLength = users.length;

@@ -1,0 +1,82 @@
+.login {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1.5rem;
+    gap: 2rem;
+    background-color: var(--background-white);
+    border: 1px solid var(--border-light-gray);
+    border-radius: 1rem;
+
+    &:hover {
+        filter: var(--shadow-button);
+    }
+
+    &-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    &-form input {
+        border: 1px solid var(--border-light-gray);
+        border-radius: 1rem;
+        padding: 0 1rem;
+        height: 80px;
+    }
+
+    & :focus {
+        outline: none !important;
+        box-shadow: var(--shadow-modal);
+    }
+
+    & ::placeholder {
+        color: rgb(0, 0, 0);
+    }
+
+}
+
+.login-text {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    & a,
+    & span {
+        font-size: 1.5rem;
+    }
+
+    & a{
+        color: var( --font-color-blue);
+        font-weight: 700;
+    }
+}
+
+
+
+// .login :focus :placeholder-shown {
+//     font-size: 0.5rem;
+//     padding: 3rem;
+// }
+
+.login input:hover::placeholder,
+.login input:focus::placeholder // .login input:focus::placeholder:write {
+
+    {
+    transition: all .2s ease-in-out;
+    font-size: 0.8rem;
+    transform: translateY(-12.5px);
+
+}
+
+.login input:focus {
+    font-size: 1rem;
+}
