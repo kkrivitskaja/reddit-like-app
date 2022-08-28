@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-import style from '../../styles/Home.module.scss';
+import style from './BaseButton.module.scss';
 
 const BaseButton = ({
     tag = 'button',
